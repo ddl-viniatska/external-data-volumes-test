@@ -1,6 +1,6 @@
 library(tidyverse)
 
-dir_root = "/domino/edv"
+dir_root = "/mnt"
 dir_mount = "diabetes_rw"
 dir_fullpath = file.path(dir_root, dir_mount)
 dir_fullpath_file = file.path(dir_fullpath, "diabetes.csv")
