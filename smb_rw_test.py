@@ -4,7 +4,7 @@ import uuid
 unique_filename = str(uuid.uuid4())
 
 # Specify the directory path
-path = r'/domino/edv/diabetes_rw'
+path = r'/mnt/diabetes_rw'
 
 file_name = unique_filename
 
