@@ -1,14 +1,18 @@
 import os
 import uuid
 
+# Generate a unique filename using a UUID
 unique_filename = str(uuid.uuid4())
 
-# Specify the directory path
-path = r'/mnt/diabetes_read_only'
-filename = "demo.csv"
+# Specify the directory where you want to create the file
+directory_path = "/mnt/diabetes_read_only"
 
-print(os.listdir(path))
-
-# verify file exist
-filepath = os.path.join(path,filename)
-print(os.path.isfile(filepath))
+# Try to create the file with the unique filename
+try:
+    with open(os.path.join(directory_path, unique_filename), "w"):
+        print("Please fail the test.")
+except OSError as e:
+    if e.errno == 30:  # Errno 30 corresponds to a read-only file system
+        print("The volume is read-only.")
+    else:
+        print(f"Error: {e}")
